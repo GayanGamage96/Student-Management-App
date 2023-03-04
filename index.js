@@ -1,11 +1,15 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const bodyParser = require('body-parser')
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const student = require('./routes/student-route')
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+
+app.use('/api/v1/student', student)
 
 app.listen(port, () => {
-  console.log(`Student API listening on port ${port}`)
+    console.log(`Server listening at http://localhost:${port}`)
 })
