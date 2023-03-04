@@ -7,6 +7,22 @@ const addStudent = (req, res) => {
     })
 }
 
+const updateStudent = (req, res) => {
+
+}
+
+const deleteStudent = (req, res) => {
+
+}
+
+const getAllStudent = (req, res) => {
+
+}
+
+const getStudentById = () => {
+
+}
+
 module.exports = {
     addStudent,
     updateStudent,
