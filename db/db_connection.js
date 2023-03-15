@@ -7,7 +7,7 @@ function getConnection() {
         connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: 'yasindu@ijse',
+            password: 'acpt96',
             database: 'student_amad_api'
         })
     }
