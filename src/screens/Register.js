@@ -67,7 +67,7 @@ const Register = ({navigation}) => {
        
 
         <TouchableOpacity
-        onPress={()=>onReg()}
+        
         style={{
           backgroundColor:'#AD40AF',
           padding:12,

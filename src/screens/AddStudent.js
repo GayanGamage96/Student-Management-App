@@ -17,23 +17,31 @@ const AddStudent = ({ navigation }) => {
 
 
     const addStd = () => {
-        fetch('http://192.168.70.232:3000/api/v1/student', {
-            method: 'POST',
+         fetch(`http://192.168.70.232:5000/api/notes/add`, {
+            method: "POST",
             body: JSON.stringify({
-                std_id: id,
-                name: name,
-                address: address,
-                registered_date: date,
-                course: course,
-                
-
+            std_id: id,
+            name: name,
+            address: address,
+            registered_date: date,
+            course: course,
             }),
             headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            return res.json()
+
+        }).then(res => {
+            console.log(res)
+            getAllStudent();
+            setModal(false)
+            clearForm()
+            
+        }).catch(err => {
+            console.log(err)
         })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
     }
 
 
